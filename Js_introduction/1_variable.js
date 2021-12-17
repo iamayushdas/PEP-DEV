@@ -34,6 +34,14 @@ console.log(c);
 
 
 
+// 2nd problem with var -- Scoping
 
+if(10%2==0){
+    // var d = 2;   // Can be accessed out of if block which should be not allowed
+    let d = 2;      // resolves the above problem
+    console.log(d);
+}
+
+console.log(d);
 
 
