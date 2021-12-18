@@ -25,3 +25,23 @@ function mul(a, b){
 }
 
 console.log(mul(2,3));
+
+// function as first class citizens
+// javascript function or variable me koi difference nahi krta, js me variables ko function
+    // banakr call kr skta h
+
+
+// Anonymous function - no name function
+let sayHii = function(){
+    console.log('Hii from function as variable');
+}
+
+sayHii();
+
+// IIFE (Immediately invoked function expression)
+
+let addition = (function(a, b){
+    return 'Addition from IIFE'+ a+b;
+})(16,14)
+
+console.log(addition);
