@@ -1,39 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyWebsite</title>
-</head>
-<body>
+    <style>
+                            /* CSS selector -- internal CSS */
+
+                                /* Element selector */
+        /* h1, h2, h3{
+            color: red;
+        }
+        h4, h5, h6{
+            color: blue;
+        }
+        p{
+            color: green;
+        } */
+
+                                /* decendent selectors */
+        /* div ol{
+            color: aqua;
+        } */
+
+                                /* children selector -- immediate relation */
+        /* div>h1>span{
+            color: aquamarine;
+        }
+        div>span>h1{
+            color: blue;
+        } */
+
+                                /* Class selectors */
+        /* .class1{
+            color: blueviolet;
+        }
+        .class2{
+            color: red;
+        } */
+
+                                /* multiple classes on same element */
+        /* .m1.m2{
+            color: blue;
+        } */
+
+                                /* classes decendent  */
+        /* .c1 .c2{
+            color: red;
+        } */
+                                /* class children combinator */
+        /* .c1>p{
+            color: forestgreen;
+        } */
+
+        /* .c2>span>p{
+            color: navajowhite;
+        } */
+
+                                /* id selector */
+        /* #the-one{
+            color: aquamarine;
+        } */
+
+                                /* Attribute selector */
+        /* input[value = 'Select me']{
+            background-color: blue;
+            color: white;
+        } */
+    </style>
+  </head>
+  <body>
     <!-- HEADINGS -->
     <h1>Ayush was here</h1>
     <h2>Ayush was here</h2>
     <h3>Ayush was here</h3>
     <h4>Ayush was here</h4>
-    <h5>Ayush was here</h5>
+    <h5 style="color: violet; font-family: cursive;">Ayush was here</h5>
     <h6>Ayush was here</h6>
 
     <!-- PARAGRAPHS -->
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Similique alias commodi earum itaque corporis assumenda,
-         fuga quas. Rerum laudantium, autem, rem ducimus voluptatum
-          impedit quae quisquam, adipisci voluptates ut cupiditate.</p>
+    <p style="color: violet; font-family: cursive;">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique alias
+      commodi earum itaque corporis assumenda, fuga quas. Rerum laudantium,
+      autem, rem ducimus voluptatum impedit quae quisquam, adipisci voluptates
+      ut cupiditate.
+    </p>
 
     <!-- DIVISION -- div -->
     <div>
-        <p>1. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-             Consequuntur veniam facere corrupti odit quae autem eius
-              dolore officiis optio, vel accusantium unde molestiae fa
-              cilis, quos ea repellat modi corporis. Odio.</p>
+      <p>
+        1. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Consequuntur veniam facere corrupti odit quae autem eius dolore officiis
+        optio, vel accusantium unde molestiae fa cilis, quos ea repellat modi
+        corporis. Odio.
+      </p>
     </div>
 
     <div>
-        <p>2. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-             Consequuntur veniam facere corrupti odit quae autem eius
-              dolore officiis optio, vel accusantium unde molestiae fa
-              cilis, quos ea repellat modi corporis. Odio.</p>
+      <p>
+        2. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Consequuntur veniam facere corrupti odit quae autem eius dolore officiis
+        optio, vel accusantium unde molestiae fa cilis, quos ea repellat modi
+        corporis. Odio.
+      </p>
     </div>
 
     <!-- LISTS -->
@@ -42,22 +112,140 @@
     <!-- 1. UnOrdered list -->
     <h4>1. Unordered List</h4>
 
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-    </ul>
+    <div>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+          </ul>
+    </div>
+
 
     <!-- 2. Ordered list -->
     <h4>2. Ordered List</h4>
 
-    <ol>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-    </ol>
+    <div>
+        <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+          </ol>
+    </div>
 
-</body>
+
+    <!-- SPAN -->
+    <p>
+      Lorem ipsum dolor <span style="color: crimson">amet</span> sit
+      consectetur,
+    </p>
+
+    <!-- ANCHOR 'http reference - href'-->
+    <a href="https://www.pepcoding.com/"
+      >Pepcoding is <span style="color: plum">love</span> <br
+    /></a>
+
+    <!-- IMAGE -->
+    <img
+      style="width: 200px; height: 250px"
+      src="passport_size_img.jpeg"
+      alt="Ayush Das"
+    />
+
+    <!-- TABLE -->
+    <table border="1">
+      <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+      </tr>
+    </table>
+
+    <!-- Children selectors -->
+    <div>
+        <h1>
+            <span>i am direct</span>
+        </h1>
+    </div>
+
+    <div>
+        <span>
+            <h1>
+                <span>i am indirect</span>
+            </h1>
+        </span>
+    </div>
+
+    <!-- Class selctors -->
+    <p class="class1">Make me violet</p>
+    <p class="class2">Make me red</p>
+    <p class="class3">Hello 3</p>
+
+    <!-- Select the element with multiple classes(m1 & m2) and make them blue -->
+    <div class="m1 m2">
+        Select me
+    </div>
+
+    <div class="m1">Not me</div>
+    <div class="m2">Not me either</div>
+
+    <!-- Select "I'm here. find me" and make it blue  -->
+
+  <div class="c1">
+    <div>
+      <div>
+        <span>
+          <div class="c2">I'm here. find me</div>
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+    <!-- select "I'm the direct son" and make it blue  -->
+    <div class="c1">
+        <p>
+            I'm the direct son
+        </p>
+    </div>
+
+    <div class="c2">
+        <span>
+            <p>I'm the indirect son</p>
+        </span>
+    </div>
+    <span>
+      <div class="c1">Dont select me</div>
+    </span>
+
+    <!-- Select s2 with id=the-one and make it blue -->
+    <p class="s1">Random</p>
+    <p class="s1">Random</p>
+    <p class="s1">Random</p>
+    <p class="s1">Random</p>
+    <p class="s2">Random</p>
+    <p class="s2">Random</p>
+    <p class="s2" id="the-one">select me</p>
+    <p class="s2">Random</p>
+    <p class="s2">Random</p>
+
+    <!-- Select input element with the value "Select Me" and 
+        make its background blue  -->
+
+        <form>
+            <input type="button" value="Click Me">
+            <input type="button" value="Select me">
+        </form>
+  </body>
 </html>
