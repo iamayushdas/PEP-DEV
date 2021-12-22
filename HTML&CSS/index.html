@@ -68,6 +68,10 @@
             background-color: blue;
             color: white;
         } */
+
+        .some-class>#the-one>.c1.c2{
+            color: red;
+        }
     </style>
   </head>
   <body>
@@ -247,5 +251,22 @@
             <input type="button" value="Click Me">
             <input type="button" value="Select me">
         </form>
+
+    <!-- Select the element with "Select me" and make it blue  -->
+    <div class="some-class">
+        <div id="the-one">
+            <p>Random</p>
+            <div>
+                <p class="c1 c2">Random</p>
+            </div>
+            <p class="c1 c2">Select me</p>
+            <div class="c1 c2">Select me</div>
+        </div>
+    </div>
+    <div class="some-class">
+        <p class="c1">Random</p>
+        <p class="c2">Random</p>
+        <p class="c1 c2">Random</p>
+    </div>
   </body>
 </html>
