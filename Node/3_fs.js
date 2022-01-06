@@ -25,3 +25,35 @@ fs.writeFileSync('f1.txt', 'cheers!');
 // unlink sync
 fs.unlinkSync('f3.txt');
 console.log('f3.text deleted');
+
+                                        // ***** Rename File *****
+
+fs.renameSync('f2.txt', 'secondFile.txt');
+console.log('file renamed');
+
+                                        // Directories/folders
+
+// mkdirSync used to create new directory or folder
+// fs.mkdirSync('mkdirSync folder');
+// console.log("folder/directory created");
+
+// delete directory - rmdirSync
+// fs.rmdirSync('mkdirSync folder');
+// console.log("folder/directory deleted");
+
+// if my folder/file exists or not? existsSync //returns true or false
+let doesExist = fs.existsSync('mkdirSync folder');
+console.log(doesExist);
+
+// stats of a directory
+let statsOfDirectory = fs.lstatSync('mkdirSync folder');
+console.log(statsOfDirectory);
+
+// is a file or folder
+console.log('isFile?', statsOfDirectory.isFile());
+console.log('isDirectory?', statsOfDirectory.isDirectory());
+
+// watch the content in folder -> readdirSync
+let folderPath = '/Users/iamayushdas/development/PEP-DEV/Node/mkdirSync\ folder';
+let folderContent = fs.readdirSync(folderPath);
+console.log("directory content " +folderContent);
