@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 // read write update delete file
 
@@ -57,3 +58,17 @@ console.log('isDirectory?', statsOfDirectory.isDirectory());
 let folderPath = '/Users/iamayushdas/development/PEP-DEV/Node/mkdirSync\ folder';
 let folderContent = fs.readdirSync(folderPath);
 console.log("directory content " +folderContent);
+
+                                //copying
+// src file and destination path
+
+let srcFilePath = '//Users//iamayushdas//development//PEP-DEV/Node//dir1//f1.txt';
+let destinationPath = '//Users//iamayushdas//development//PEP-DEV//Node//dir2//';
+
+let toBeCopiedFileName = path.basename(srcFilePath);
+console.log(toBeCopiedFileName);
+
+let destPath = path.join(destinationPath, toBeCopiedFileName);
+console.log(destPath);
+fs.copyFileSync(srcFilePath, destPath);
+console.log('File copied');
