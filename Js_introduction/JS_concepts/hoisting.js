@@ -1,7 +1,8 @@
-console.log(a);  //Undefined
+console.log(a);  //Undefined with var
+// initialization error with let and const 
 greet();         // hello
 
-var a = 2;
+let a = 2;
 
 function greet(){
     console.log('====================================');
