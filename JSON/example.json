@@ -1,0 +1,77 @@
+[
+    {
+        "name": "Ayush",
+        "last name": "Das",
+        "isCoder": true,
+        "friend": [
+            "Amit",
+            "Akshay"
+        ],
+        "age": 22,
+        "address": {
+            "city": "new delhi",
+            "state": "delhi",
+            "country": "india"
+        }
+    },
+    {
+        "name": "Shivani",
+        "last name": "Das",
+        "isCoder": true,
+        "friend": [
+            "Amit",
+            "Akshay"
+        ],
+        "age": 22,
+        "address": {
+            "city": "new delhi",
+            "state": "delhi",
+            "country": "india"
+        }
+    },
+    {
+        "name": "Amit",
+        "last name": "Dubey",
+        "isCoder": true,
+        "friend": [
+            "Amit",
+            "Akshay"
+        ],
+        "age": 22,
+        "address": {
+            "city": "new delhi",
+            "state": "delhi",
+            "country": "india"
+        }
+    },
+    {
+        "name": "Akshay",
+        "last name": "kalbhor",
+        "isCoder": true,
+        "friend": [
+            "Amit",
+            "Akshay"
+        ],
+        "age": 22,
+        "address": {
+            "city": "new delhi",
+            "state": "delhi",
+            "country": "india"
+        }
+    },
+    {
+        "name": "Anuj",
+        "last name": "Singh",
+        "isCoder": true,
+        "friend": [
+            "Amit",
+            "Akshay"
+        ],
+        "age": 22,
+        "address": {
+            "city": "new delhi",
+            "state": "delhi",
+            "country": "india"
+        }
+    }
+]

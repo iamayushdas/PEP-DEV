@@ -1,10 +1,14 @@
 const url = "https://www.espncricinfo.com/series/ipl-2020-21-1210595";
-
+const fs = require('fs')
+const path = require('path')
 const request = require('request')
 const cheerio = require('cheerio')
 
+const AllMatchObj = require("./allMatch")
+// homepage
 
-
+const iplPath = path.join(__dirname, "ipl")
+dirCreater(iplPath);
 request(url, cb)
 
 
@@ -19,9 +23,9 @@ function extractLink(html){
     // let link = anchorElement.attr('href');
     
     let fulllink = 'https://www.espncricinfo.com' + $(anchorElement).attr('href');
-    console.log(fulllink);
+    // console.log(fulllink);
 
-    getAllMatchLink(fulllink)
+    AllMatchObj.getAllMatch(fulllink);
 }
 
 function getAllMatchLink(uri){
@@ -38,5 +42,12 @@ function extractAllLink(html){
         let link = $(scoreCardArr[i]).attr('href')
         let fulllink = 'https://www.espncricinfo.com' + link
         console.log(fulllink);
+    }
+}
+
+
+function dirCreater(filepath){
+    if(fs.existsSync(filepath) == false){
+        fs.mkdirSync(filepath)
     }
 }
