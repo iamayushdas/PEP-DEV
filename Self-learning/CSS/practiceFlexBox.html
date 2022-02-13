@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            padding: 34px;
+        }
+        li{
+            list-style: none;
+            display: inline;
+            padding: 0 20px;
+        }
+        header{
+            background-color: black;
+            color: white;
+        }
+/* ======================================================= */
+        /* FLex method */
+        .container{
+            display: flex;
+            justify-content: space-between;
+        }
+        .left{
+            height: 80vh;
+            width: 40vw;
+            background-color: aqua;
+        }
+        .right{
+            height: 80vh;
+            width: 40vw;
+            background-color: blueviolet;
+        }
+/* ======================================================= */
+        /* Float method */
+
+        /* .left{
+            height: 80vh;
+            width: 40vw;
+            float: left;
+            background-color: aqua;
+        }
+        .right{
+            height: 80vh;
+            width: 40vw;
+            float: right;
+            background-color: blueviolet;
+        } */
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="left">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae debitis distinctio asperiores ipsa cupiditate. Architecto illum commodi iusto. Libero ipsum, natus debitis eaque iste saepe eos, cum accusamus, quae aliquid doloremque sed. Nesciunt, laudantium?</div>
+        <div class="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum velit cumque harum, vero laboriosam aliquam eligendi numquam placeat alias asperiores nihil provident tempora similique iste iusto mollitia quibusdam fuga soluta, doloribus quaerat itaque earum ducimus reiciendis. Vel, doloribus. Voluptate nihil laboriosam sed porro modi rem reiciendis laudantium, ad doloremque consectetur non rerum mollitia labore ipsam itaque.</div>
+    </div>
+</body>
+</html>
