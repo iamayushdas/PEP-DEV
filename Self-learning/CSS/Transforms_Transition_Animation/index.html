@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: red;
+            height: 455px;
+        }
+
+        /* TRANSFORM */
+        .box {
+            border: 2px solid black;
+            display: inline-block;
+            /* transform: translate(134px, 134px) rotate(0.5turn); */
+            /* transform-origin: 0; */
+            /* transform: scale(4,7); */
+            /* transform: scaleX(4);
+            transform: scaleY(8); */
+            /* transform: skew(4deg, 6deg); */
+            /* transform: skewX(4deg);
+            transform: skewY(6deg); */
+            /* transform: matrix(); */
+        }
+
+        /* TRANSITION */
+        img {
+            width: 146px;
+            height: 16px;
+             /*transition-property: width;
+            transition-duration: 1s;
+            transition-timing-function: ease-in;
+            transition-delay: 3s; */
+            transition: width 1s ease-in-out 1s, height 1s ease-in-out 1s;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <img id="myImg" src="https://source.unsplash.com/960x520/?nature,water" alt="">
+            <button id="btn">Toggle</button>
+        </div>
+    </div>
+</body>
+<script>
+    btn.addEventListener("click", () => {
+        if (myImg.style.width === "546px" && myImg.style.height === "455px") {
+            myImg.style.width = "146px"
+            myImg.style.height = "16px"
+        } else {
+            myImg.style.width = "546px";
+            myImg.style.height = "455px";
+        }
+
+    })
+</script>
+
+</html>
