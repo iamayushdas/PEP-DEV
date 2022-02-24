@@ -21,6 +21,11 @@ export default{
               hotspot: true,
             },
         },
+        {
+            name:'url',
+            title:'Url',
+            type:'string'
+        },
         
     ]
 }
