@@ -5,7 +5,7 @@ import {images} from '../../constants'
 import './About.scss'
 import { urlFor, client } from '../../client'
 
-import { AppWrap } from '../../wrapper'
+import { AppWrap, MotionWrap } from '../../wrapper'
 // const abouts = [
 //   // {title: 'Open Source Contributor', description: 'I have contributed my codes in Facebook , Apache APISIX, CNCF etc', imgUrl: images.about01, url: 'https://github.com/iamayushdas'},
 //   // {title: 'Web Development', description: 'I am a good web developer.', imgUrl: images.about02, url: ''},
@@ -52,4 +52,8 @@ const About = () => {
   )
 }
 
-export default AppWrap(About, 'about')
+export default AppWrap(
+  MotionWrap(About, 'app__about'),
+  'about',
+  "app__whitebg" 
+  )
