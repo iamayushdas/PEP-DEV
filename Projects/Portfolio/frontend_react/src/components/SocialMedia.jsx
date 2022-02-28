@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsTwitter, BsInstagram, BsGithub, BsLinkedin } from 'react-icons/bs';
+import { BsTwitter, BsInstagram, BsGithub, BsLinkedin, BsTelegram, BsWhatsapp } from 'react-icons/bs';
 import { FaFacebookF, FaLinkedin } from 'react-icons/fa';
 
 const SocialMedia = () => {
@@ -13,6 +13,12 @@ const SocialMedia = () => {
         </div>
         <div>
           <a href="https://twitter.com/imayushdas"><BsTwitter /></a>           
+        </div>
+        <div>
+          <a href="tg://resolve?domain=iamayushdas"><BsTelegram /></a>           
+        </div>
+        <div>
+          <a href="https://wa.me/+919599103808?text=Hello! How can i help you?"><BsWhatsapp /></a>           
         </div>
         <div>
         <a href="https://instagram.com/iamayushdas"><BsInstagram /></a>
