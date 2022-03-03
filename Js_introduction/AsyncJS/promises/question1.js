@@ -23,3 +23,6 @@ placeOrder('coffee').then(function(demand){
 .then(function(orderServed){
     console.log(orderServed);
 })
+.catch(function(err){
+    console.log(err);
+})
