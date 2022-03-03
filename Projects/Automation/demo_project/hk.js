@@ -48,8 +48,8 @@ browserWillBeLaunchedPromise.then(function (browserInstance) {
 }).then(function(questionsArr){
     console.log("No of question" + questionsArr.length);
 
-    let questionWillBeSolved = questionSolver(page, questionsArr[0], codeFile.answers[0])
-    return questionWillBeSolved
+    let questionWillBeSolvedPromise = questionSolver(page, questionsArr[0], codeFile.answers[0])
+    return questionWillBeSolvedPromise
 })
 
 function waitAndClick(selector, cPage) {
@@ -83,8 +83,49 @@ function questionSolver(page, question, answer){
         .then(function(){
             return page.type('textarea.custominput', answer, {delay: 10})
         })
+        .then(function() {
+            let ctrlIsPressedPromise = page.keyboard.down('Control');
+            return ctrlIsPressedPromise;
+        })
+        .then(function() {
+            let AIsPressedPromise = page.keyboard.press('A', {delay: 10});
+            return AIsPressedPromise;
+        })
+        .then(function() {
+            let XIsPressedPromise = page.keyboard.press('X', {delay: 10});
+            return XIsPressedPromise;
+        })
+        .then(function() {
+            let ctrlIsReleasedPromise = page.keyboard.up('Control');
+            return ctrlIsReleasedPromise;
+        })
         .then(function(){
-            return page.click('.ui-btn.ui-btn-normal.ui-btn-primary.pull-right.hr-monaco-submit.ui-btn-styled', {delay: 10})
+            let editorInFocusPromise = waitAndClick('.monaco-editor.no-user-select.vs', page)
+            return editorInFocusPromise
+        })
+        .then(function() {
+            let ctrlIsPressedPromise = page.keyboard.down('Control');
+            return ctrlIsPressedPromise;
+        })
+        .then(function() {
+            let AIsPressedPromise = page.keyboard.press('A', {delay: 10});
+            return AIsPressedPromise;
+        })
+        .then(function() {
+            let VIsPressedPromise = page.keyboard.press('V', {delay: 10});
+            return VIsPressedPromise;
+        })
+        .then(function() {
+            let ctrlIsReleasedPromise = page.keyboard.up('Control');
+            return ctrlIsReleasedPromise;
+        })
+        .then(function(){
+            return page.click('.hr-monaco__run-code', {delay: 20})
+        })
+        .then(function(){
+            resolve();
+        }).catch(function(err){
+            reject();
         })
     })
 }
