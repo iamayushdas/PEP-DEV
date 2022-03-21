@@ -22,7 +22,7 @@ body{
 .toolbox-priority-cont{
     height: 3.5rem;
     width: 18rem;
-    background-color: coral;
+    background-color: #3d3d3d;
     display: flex;
     align-items: center;
     justify-content: space-around;
