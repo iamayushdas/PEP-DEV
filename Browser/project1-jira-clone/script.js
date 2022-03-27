@@ -49,6 +49,7 @@ modalCont.addEventListener('keydown', function(e){
     if(key == 'Shift'){
         createTicket(modalPriorityColor, textAreaCont.value) //this function will generate the ticket
         modalCont.style.display = 'none';
+        textAreaCont.value = '';
         addFlag = false;
     }
 })
