@@ -87,10 +87,15 @@ body{
 
 
 .modal-cont{
-    height: 10rem;
-    width: 10rem;
+    height: 50vh;
+    width: 45vw;
     background-color: aqua;
     position: absolute;
-    top: calc((100vh - 10rem)/2);
-    left: calc((100vw - 10rem)/2);
+    top: calc((100vh - 50vh)/2);
+    left: calc((100vw - 45vw)/2);
+}
+
+.textarea-cont {
+    height: 100%;
+    width: 75%;
 }
