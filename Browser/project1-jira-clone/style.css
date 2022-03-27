@@ -28,9 +28,15 @@ body{
     justify-content: space-around;
 }
 
+.toolbox-priority-cont>*:hover{
+    height: 1.7rem;
+    width: 3.2rem;
+}
+
 .color{
     height: 1.5rem;
     width: 3rem;
+    border-radius: 4px;
 }
 
 
@@ -40,6 +46,18 @@ body{
     background-color: #3d3d3d;
     display: flex;
 }
+
+.action-btn-cont>.add-btn:hover{
+    background-color: greenyellow;
+    color: black;
+    border-radius: 4px;
+}
+
+.action-btn-cont>.remove-btn:hover{
+    background-color: crimson;
+    border-radius: 4px;
+}
+
 
 .action-btn-cont>*{
     display: flex;
@@ -68,5 +86,11 @@ body{
 }
 
 
-
-
+.modal-cont{
+    height: 10rem;
+    width: 10rem;
+    background-color: aqua;
+    position: absolute;
+    top: calc((100vh - 10rem)/2);
+    left: calc((100vw - 10rem)/2);
+}
