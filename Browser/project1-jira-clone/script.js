@@ -12,6 +12,8 @@ let allPriorityColor = document.querySelectorAll('.priority-color');
 
 let addFlag = false;
 
+let textAreaCont = document.querySelector('.textarea-cont')
+
 addBtn.addEventListener('click', function(e){
     // display a modal
         // addFlag - true - modal display
@@ -35,6 +37,8 @@ allPriorityColor.forEach(function(colorElem){
         })
         // fir selected element pr active class lga do
         colorElem.classList.add('active')
+
+        modalPriorityColor = colorElem.classList[0];
     })
 })
 
@@ -43,19 +47,19 @@ modalCont.addEventListener('keydown', function(e){
     let key = e.key;
 
     if(key == 'Shift'){
-        createTicket() //this function will generate the ticket
+        createTicket(modalPriorityColor, textAreaCont.value) //this function will generate the ticket
         modalCont.style.display = 'none';
         addFlag = false;
     }
 })
 
-function createTicket(){
+function createTicket(ticketColor, ticketText){
     let ticketCont = document.createElement('div')
     ticketCont.setAttribute('class', 'ticket-cont')
 
-    ticketCont.innerHTML = `<div class="ticket-color"></div>
+    ticketCont.innerHTML = `<div class="ticket-color ${ticketColor}"></div>
     <div class="ticket-id">dsafewrew</div>
-    <div class="task-area">Buy Milk</div>`
+    <div class="task-area">${ticketText}</div>`
 
     mainCont.appendChild(ticketCont);
 }
