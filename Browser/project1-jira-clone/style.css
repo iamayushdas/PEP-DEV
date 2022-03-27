@@ -133,6 +133,7 @@ body{
 .active{
     height: 3.3rem;
     width: 5.5rem;
+    border: 5px solid white;
 }
 
 .main-cont{
