@@ -146,17 +146,18 @@ body{
     height: 12rem;
     width: 15rem;
     background-color: #f1f2f6;
+    border-radius: 8px;
 }
 
 .ticket-color{
     height: 1rem;
     background-color: black;
+    border-radius: 8px 8px 0 0;
 }
 
 .ticket-id{
     height: 2rem;
     background-color: grey;
-
     padding: 5px;
 }
 
