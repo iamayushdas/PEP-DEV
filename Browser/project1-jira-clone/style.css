@@ -140,6 +140,7 @@ body{
     gap: 2rem;
     padding: 2rem;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .ticket-cont{
