@@ -62,6 +62,15 @@ for(let i  = 0; i<toolBoxColors.length; i++){
     })
 }
 
+//local storage get all tickets
+
+if(localStorage.getItem('tickets')){
+    ticketArr = JSON.parse(localStorage.getItem('tickets'))
+    ticketArr.forEach(function(ticket){
+        createTicket(ticket.ticketColor, ticket.ticketText, ticket.ticketId)
+    })
+}
+
 addBtn.addEventListener('click', function (e) {
     // display a modal
     // addFlag - true - modal display
@@ -127,8 +136,9 @@ function createTicket(ticketColor, ticketText, ticketId) {
 
     if(!ticketId){
         ticketArr.push({ticketColor, ticketText, ticketId:id})
+        localStorage.setItem('tickets', JSON.stringify(ticketArr))
     }
-    
+
 }
 
 removeBtn.addEventListener('click', function () {
