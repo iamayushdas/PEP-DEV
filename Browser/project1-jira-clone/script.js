@@ -22,6 +22,46 @@ let lockClass = 'fa-lock';
 
 let unlockClass = 'fa-lock-open';
 
+let toolBoxColors = document.querySelectorAll('.color');
+
+let ticketArr = []
+
+// filter tickets wrt colors
+
+for(let i  = 0; i<toolBoxColors.length; i++){
+    toolBoxColors[i].addEventListener('click', function(e){
+        let currentToolBoxColor = toolBoxColors[i].classList[0];
+        // console.log(currentToolBoxColor);
+
+        let filteredTickets = ticketArr.filter(function(ticketObj){
+            return currentToolBoxColor === ticketObj.ticketColor
+        })
+
+        // remove previous tickets
+        let allTickets = document.querySelectorAll('.ticket-cont')
+
+        for(let i = 0; i<allTickets.length; i++){
+            allTickets[i].remove()
+        }
+
+        filteredTickets.forEach(function(filteredObj){
+            createTicket(filteredObj.ticketColor, filteredObj.ticketText, filteredObj.ticketId)
+        })
+    })
+
+    toolBoxColors[i].addEventListener('dblclick', function(e){
+        let allTickets = document.querySelectorAll('.ticket-cont')
+
+        for(let i = 0; i<allTickets.length; i++){
+            allTickets[i].remove()
+        }
+
+        ticketArr.forEach(function(ticketObj){
+            createTicket(ticketObj.ticketColor, ticketObj.ticketText, ticketObj.ticketId)
+        })
+    })
+}
+
 addBtn.addEventListener('click', function (e) {
     // display a modal
     // addFlag - true - modal display
@@ -55,7 +95,7 @@ modalCont.addEventListener('keydown', function (e) {
     let key = e.key;
 
     if (key == 'Shift') {
-        createTicket(modalPriorityColor, textAreaCont.value, shortid()) //this function will generate the ticket
+        createTicket(modalPriorityColor, textAreaCont.value) //this function will generate the ticket
         modalCont.style.display = 'none';
         textAreaCont.value = '';
         addFlag = false;
@@ -64,11 +104,12 @@ modalCont.addEventListener('keydown', function (e) {
 
 
 function createTicket(ticketColor, ticketText, ticketId) {
+    let id = ticketId || shortid()
     let ticketCont = document.createElement('div')
     ticketCont.setAttribute('class', 'ticket-cont')
 
     ticketCont.innerHTML = `<div class="ticket-color ${ticketColor}"></div>
-            <div class="ticket-id">id-${ticketId}
+            <div class="ticket-id">id-${id}
             <div class="ticket-lock">
             <i class="fa-solid ${lockClass}"></i>
         </div></div>
@@ -83,6 +124,11 @@ function createTicket(ticketColor, ticketText, ticketId) {
     handleLock(ticketCont)
 
     handleColor(ticketCont)
+
+    if(!ticketId){
+        ticketArr.push({ticketColor, ticketText, ticketId:id})
+    }
+    
 }
 
 removeBtn.addEventListener('click', function () {
