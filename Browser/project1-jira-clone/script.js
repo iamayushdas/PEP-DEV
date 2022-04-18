@@ -128,11 +128,11 @@ function createTicket(ticketColor, ticketText, ticketId) {
 
     mainCont.appendChild(ticketCont);
 
-    handleRemoval(ticketCont);
+    handleRemoval(ticketCont, id);
 
-    handleLock(ticketCont)
+    handleLock(ticketCont, id)
 
-    handleColor(ticketCont)
+    handleColor(ticketCont, id)
 
     if(!ticketId){
         ticketArr.push({ticketColor, ticketText, ticketId:id})
@@ -151,18 +151,27 @@ removeBtn.addEventListener('click', function () {
     }
 })
 
-function handleRemoval(ticket) {
+function handleRemoval(ticket, id) {
     ticket.addEventListener('click', function () {
-        if (removeFlag == true) {
-            ticket.remove();
-        }
+        if (!removeFlag) return
+        
+        let idx = getTicketIdx(id);
+
+        // localstorage removal of ticket
+        ticketArr.splice(idx,1);
+
+        let strTicketArray = JSON.stringify(ticketArr)
+
+        localStorage.setItem('tickets', strTicketArray)
+
+        ticket.remove();
     })
 }
 
 
 // LOCK and UNLOCK tickets
 
-function handleLock(ticket){
+function handleLock(ticket, id){
     let ticketLockElem = ticket.querySelector('.ticket-lock')
 
     let ticketLock = ticketLockElem.children[0];
@@ -170,6 +179,8 @@ function handleLock(ticket){
     let ticketTaskArea = ticket.querySelector('.task-area')
 
     ticketLock.addEventListener('click', function(e){
+
+        let ticketIdx = getTicketIdx(id)
         if(ticketLock.classList.contains(lockClass)){
             ticketLock.classList.remove(lockClass)
             ticketLock.classList.add(unlockClass)
@@ -180,14 +191,18 @@ function handleLock(ticket){
             ticketLock.classList.add(lockClass)
             ticketTaskArea.setAttribute('contentEditable', 'false') 
         }
+
+        ticketArr[ticketIdx].ticketText = ticketTaskArea.innerText
+        localStorage.setItem('tickets', JSON.stringify(ticketArr))
     })
 }
 
 
-function handleColor(ticket){
+function handleColor(ticket, id){
     let ticketColorBand = ticket.querySelector('.ticket-color')
 
     ticketColorBand.addEventListener('click', function(e){
+        let ticketIdx = getTicketIdx(id);
         let currentTicketColor = ticketColorBand.classList[1];
         let currentTicketColorIdx = colors.findIndex(function(color){
             return currentTicketColor === color
@@ -202,5 +217,18 @@ function handleColor(ticket){
         ticketColorBand.classList.remove(currentTicketColor);
         ticketColorBand.classList.add(newTicketColor)
 
+
+        // modify with new color
+
+        ticketArr[ticketIdx].ticketColor = newTicketColor
+        localStorage.setItem('tickets', JSON.stringify(ticketArr))
     })
+}
+
+function getTicketIdx(id){
+    let ticketIdx = ticketArr.findIndex(function(ticketObj){
+        return ticketObj.ticketId === id
+    })
+
+    return ticketIdx
 }
